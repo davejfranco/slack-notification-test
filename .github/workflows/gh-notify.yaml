@@ -14,7 +14,7 @@ jobs:
 
       - name: Determine deployment destination
         run: |          
-          DESTINATION="dev"
+          DESTINATION="develop"
           # DESTINATION Deployment
           echo "DESTINATION=$DESTINATION" >> $GITHUB_ENV
             
@@ -24,7 +24,7 @@ jobs:
         with:
           payload: |
             {
-              "text": "Starting Deployment to ${{ env.DESTINATION }}"
+              "text": "Starting Deployment to ${{ env.DESTINATION }} (this is just a test)"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
